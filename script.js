@@ -1,19 +1,25 @@
-const photo = document.getElementById('photo')
+const liste = document.getElementById('liste')
+const searchBar = document.getElementById('searchBar')
+const mot = liste.getElementsByTagName('li')
 const button = document.getElementById('button')
 
-button.innerText = "Masquer"
-photo.style.transition = "transition: opacity 5s;  "
+function search() {
 
-function afficherMasquer() {
-    if (photo.style.opacity === "0") {
-        photo.style.opacity = "1"
-        button.innerText ="Masquer"
-        photo.style.transition = "opacity 5s, left, top, height"
-    } else {
-        photo.style.opacity = "0"
-        button.innerText = "afficher"
-        photo.style.transition = "opacity 5s, left, top, height"
-    }}
+    const rechercheText = searchBar.value
 
 
+    for (let i = 0; i < mot.length; i++) {
+        const item = mot[i].textContent
+        if (item === rechercheText) {
+            
+            mot[i].style.backgroundColor = "yellow"
 
+        } else {
+            mot[i].style.backgroundColor = ""
+        }
+
+        
+    }
+}
+
+button.addEventListener('click', search)
