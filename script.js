@@ -1,9 +1,19 @@
-const taskList = document.getElementById('taskList')
+const photo = document.getElementById('photo')
+const button = document.getElementById('button')
 
-function createNewTask() {
-    let task = document.createElement('li')
-    task.innerText = document.getElementById('addTask').value
-    taskList.appendChild(task)
-    document.getElementById('addTask').value = ''
-}
+button.innerText = "Masquer"
+photo.style.transition = "transition: opacity 5s;  "
+
+function afficherMasquer() {
+    if (photo.style.opacity === "0") {
+        photo.style.opacity = "1"
+        button.innerText ="Masquer"
+        photo.style.transition = "opacity 5s, left, top, height"
+    } else {
+        photo.style.opacity = "0"
+        button.innerText = "afficher"
+        photo.style.transition = "opacity 5s, left, top, height"
+    }}
+
+
 
