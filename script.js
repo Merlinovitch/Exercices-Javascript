@@ -16,9 +16,7 @@ function search() {
 
         } else {
             mot[i].style.backgroundColor = ""
-        }
-
-        
+        }        
     }
 }
 
